@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'cut_url/css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'cut_url/css/styles.css' %}">
+</head>
+<body>
+<header class="header">
+    <div class="wrapper">
+        <div class="nav">
+            <ul id="navbar">
+                {% for elem in menu %}
+                <li><a href="{% url elem.url_name %}">{{ elem.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="wrapper">
+            <h1>Cut your url online</h1>
+        </div>
+    </div>
+</header>
+
+{% block content %}
+{% endblock content %}
+
+</body>
+</html>

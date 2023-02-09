@@ -1,0 +1,18 @@
+{% extends 'cut_url/base.html' %}
+
+{% block content %}
+<section class="main">
+    <div class="wrapper">
+        <form method="POST" action="{% url 'home' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">
+                <a type="submit" class="border-button">Cut!</a>
+            </button>
+        </form>
+        <p class="response">
+            {{ short_url }}
+        </p>
+    </div>
+</section>
+{% endblock content %}
